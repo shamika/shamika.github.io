@@ -63,22 +63,22 @@ git clone git://github.com/ripienaar/mcollective-vagrant.git
 </li><li>
 Go to the folder and open Vagrantfile. Change the variables accordingly. By default the instance count (the number of instances to be spawned) is mentioned as 5. 
 </li><li>
-Then start the Vagrant instances by,
+Then start the Vagrant instances,
 {% highlight PowerShell %}
 vagrant up
 {% endhighlight %}
 
-This will take several minutes to get all the instances up and running. This will spawn the no of instances mentioned in above plus the middleware instances.
+This will take several minutes to get all the instances up and running. This will spawn the # of instances mentioned in above along with the middleware instance.
 </li><li>
 
-Log in to the middleware Vagrant instance by
+Log in to the middleware Vagrant instance,
 {% highlight PowerShell %}
 vagrant ssh middleware
 {% endhighlight %}
 </li>
 </ol>
 OK, now we are inside the cluster and ready to deal with Mcollective system.
-A command line client (mco) is used to interact with Mcollective middleware.Sample command interactions are as follows.
+A command line client (mco) is used for the purpose. Sample command interactions are as follows.
 
 <h3>Examples</h3>
 <ul>
@@ -93,7 +93,7 @@ MCollective keeps lot of information about the nodes. We can retrieve them by,
 mco inventory middleware.example.net
 {% endhighlight %}
 </li><li>
-To deal with packages in the nodes Mcoolective comes with inbuild package agent plugin
+To deal with packages in the nodes Mcoolective comes with inbuilt "package" agent plugin.
 <ul><li>
 To check the status of a package,
 {% highlight PowerShell %}
@@ -110,7 +110,7 @@ For more package manipulation commands,
 mco package --help
 {% endhighlight %}
 </li><li>
-To start/stop services in nodes, service agent plugin is provided
+To start/stop services in nodes, "service" agent plugin is provided.
 {% highlight PowerShell %}
 mco service status httpd
 mco service restart httpd
@@ -121,18 +121,18 @@ For more service manipulation commands,
 mco service --help
 {% endhighlight %}
 </li><li>
-Check the network connectivity among nodes, nettest agent is provided,
+Check the network connectivity among nodes, "nettest" agent is provided.
 {% highlight PowerShell %}
 mco nettest ping 192.168.2.10
 {% endhighlight %}
 </li><li>
-To monitor processes in node list, process agent is provided
+To monitor processes in node list, "process" agent is provided,
 </li><li>
 To list the java process running in nodes
 {% highlight PowerShell %}
      mco process list java
 {% endhighlight %}     
-This is exactly like running ps command in each node with grep
+This is exactly like running "ps" command in each node with grep
 </li><li>
 To list all such plugins installed in each node,
 {% highlight PowerShell %}
@@ -148,7 +148,7 @@ mco plugin doc agent/package
 
 <h3>Selective communication with nodes</h3>
 
-Further we can narrow down the nodes who will respond to the above commands by introducing a filter to the command itself. As these machines are built with Puppet you can use classes and facts for addressing them.
+Further we can narrow down the nodes who will respond to the above commands by introducing a filter to the command itself.As these machines are built with Puppet you can use classes and facts for addressing them.
 
 To the nodes with the roles::middleware class,
 {% highlight PowerShell %}
