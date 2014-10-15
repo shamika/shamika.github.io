@@ -174,6 +174,7 @@ To selectively install zip package to all the nodes,
 mco package install zip -W “roles::node”
 {% endhighlight %}
 
+OK, so far we have been dealing with inbuilt agents.Mcollective provides an easy way of writing our own agents to suit our purpose. Sample agent creation will be discussed in my next post.
 
 
 
