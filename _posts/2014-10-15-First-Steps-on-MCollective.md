@@ -92,6 +92,23 @@ MCollective keeps lot of information about the nodes. We can retrieve them by,
 {% highlight PowerShell %}
 mco inventory middleware.example.net
 {% endhighlight %}
+</li><li>
+To deal with packages in the nodes Mcoolective comes with inbuild package agent plugin
+<ul><li>
+To check the status of a package,
+{% highlight PowerShell %}
+mco package status mcollective
+{% endhighlight %}
+</li><li>
+To install an package 
+{% highlight PowerShell %}
+mco package install zip
+{% endhighlight %}
+</li><li></ul>
+For more package manipulation commands,
+{% highlight PowerShell %}
+mco package --help
+{% endhighlight %}
 </li>
 
 
