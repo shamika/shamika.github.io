@@ -109,9 +109,33 @@ For more package manipulation commands,
 {% highlight PowerShell %}
 mco package --help
 {% endhighlight %}
+</li><li>
+To start/stop services in nodes, service agent plugin is provided
+{% highlight PowerShell %}
+mco service status httpd
+mco service restart httpd
+{% endhighlight %}
+</li><li>
+For more service manipulation commands,
+{% highlight PowerShell %}
+mco service --help
+{% endhighlight %}
+</li><li>
+Check the network connectivity among nodes, nettest agent is provided
+mco nettest ping 192.168.2.10
+</li><li>
+To monitor processes in node list, process agent is provided
+</li><li>
+To list the java process running in nodes
+     mco process list java
+This is exactly like running ps command in each node with grep
+</li><li>
+To list all such plugins installed in each node,
+mco plugin doc
+</li><li>
+To see actions available on those plugins 
+mco plugin doc agent/package
 </li>
-
-
 </ul>
 
 Selective communication with nodes
