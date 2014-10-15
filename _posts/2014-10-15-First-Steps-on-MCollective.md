@@ -2,7 +2,7 @@
 layout: post
 title: First Steps on MCollective
 tags: mcollective, clustering
-publish: false
+
 ---
 
 The Marionette Collective (<a target="_blank" href="https://docs.puppetlabs.com/mcollective/">MCollective</a>) is a compressive toolkit developed by Puppet Labs to programmatically manage/orchestrate the jobs in a clusters of servers. Let me brief some of the use cases which imply the need of such a system. 
