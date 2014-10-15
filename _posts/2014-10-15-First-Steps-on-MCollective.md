@@ -100,11 +100,11 @@ To check the status of a package,
 mco package status mcollective
 {% endhighlight %}
 </li><li>
-To install an package 
+To install a new package,
 {% highlight PowerShell %}
 mco package install zip
 {% endhighlight %}
-</li><li></ul>
+</li></ul>
 For more package manipulation commands,
 {% highlight PowerShell %}
 mco package --help
@@ -138,29 +138,33 @@ mco plugin doc agent/package
 </li>
 </ul>
 
-Selective communication with nodes
+<h3>Selective communication with nodes</h3>
 
 Further we can narrow down the nodes who will respond to the above commands by introducing a filter to the command itself. As these machines are built with Puppet you can use classes and facts for addressing them.
 
-To the nodes with the roles::middleware class:
-
+To the nodes with the roles::middleware class,
+{% highlight PowerShell %}
     mco ping -W roles::middleware
+{% endhighlight %}   
 
-To the nodes with the roles::node class
-
+To the nodes with the roles::node class.
+{% highlight PowerShell %}
     mco ping -W roles::node
+{% endhighlight %} 
 
 We can now combine this fact with Puppet Classes to pick a subset of your nodes, this
-is an _AND_ search:
+is an AND search,
 
+{% highlight PowerShell %}
     mco ping -W "roles::node cluster=alfa"
 
     mco ping -S "(roles::node or roles::middleware) and cluster=alfa"
+{% endhighlight %}    
 
 To selectively install zip package to all the nodes,
-
+{% highlight PowerShell %}
 mco package install zip -W “roles::node”
-
+{% endhighlight %}
 
 
 
