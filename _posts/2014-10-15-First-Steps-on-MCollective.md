@@ -87,12 +87,12 @@ To see the nodes connected,
 {% highlight code %}
 mco ping
 {% endhighlight %}
-<li></li>
+</li><li>
 MCollective keeps lot of information about the nodes. We can retrieve them by,
 {% highlight PowerShell %}
 mco inventory middleware.example.net
 {% endhighlight %}
-<li></li>
+</li><li>
 To deal with packages in the nodes Mcoolective comes with inbuild package agent plugin
 <ul><li>
 To check the status of a package,
