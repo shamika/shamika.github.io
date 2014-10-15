@@ -77,11 +77,88 @@ vagrant ssh middleware
 {% endhighlight %}
 </li>
 </ol>
-OK, now we are with in the cluster and ready to deal with Mcollective system.
-A command line client (mco) is used to interact with Mcollective middleware. Sample command interactions are as follows.
+OK, now we are inside the cluster and ready to deal with Mcollective system.
+A command line client (mco) is used to interact with Mcollective middleware.Sample command interactions are as follows.
 
 <hr3>Examples</hr3>
+<ul>
+<li>
+To see the nodes connected,
+{% highlight code %}
+mco ping
+{% endhighlight %}
+<li></li>
+MCollective keeps lot of information about the nodes. We can retrieve them by,
+{% highlight PowerShell %}
+mco inventory middleware.example.net
+{% endhighlight %}
+<li></li>
+To deal with packages in the nodes Mcoolective comes with inbuild package agent plugin
+<ul><li>
+To check the status of a package,
+{% highlight PowerShell %}
+mco package status mcollective
+{% endhighlight %}
+</li><li>
+To install an package 
+{% highlight PowerShell %}
+mco package install zip
+{% endhighlight %}
+</li><li></ul>
+For more package manipulation commands,
+{% highlight PowerShell %}
+mco package --help
+{% endhighlight %}
+</li><li>
+To start/stop services in nodes, service agent plugin is provided
+{% highlight PowerShell %}
+mco service status httpd
+mco service restart httpd
+{% endhighlight %}
+</li><li>
+For more service manipulation commands,
+{% highlight PowerShell %}
+mco service --help
+{% endhighlight %}
+</li><li>
+Check the network connectivity among nodes, nettest agent is provided
+mco nettest ping 192.168.2.10
+</li><li>
+To monitor processes in node list, process agent is provided
+</li><li>
+To list the java process running in nodes
+     mco process list java
+This is exactly like running ps command in each node with grep
+</li><li>
+To list all such plugins installed in each node,
+mco plugin doc
+</li><li>
+To see actions available on those plugins 
+mco plugin doc agent/package
+</li></ul>
 
+Selective communication with nodes
+
+Further we can narrow down the nodes who will respond to the above commands by introducing a filter to the command itself. As these machines are built with Puppet you can use classes and facts for addressing them.
+
+To the nodes with the roles::middleware class:
+
+    mco ping -W roles::middleware
+
+To the nodes with the roles::node class
+
+    mco ping -W roles::node
+
+We can now combine this fact with Puppet Classes to pick a subset of your nodes, this
+is an _AND_ search:
+
+    mco ping -W "roles::node cluster=alfa"
+
+    mco ping -S "(roles::node or roles::middleware) and cluster=alfa"
+
+To selectively install zip package to all the nodes,
+
+mco package install zip -W “roles::node”
 
 
 
