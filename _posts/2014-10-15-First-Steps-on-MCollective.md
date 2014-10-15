@@ -121,20 +121,28 @@ For more service manipulation commands,
 mco service --help
 {% endhighlight %}
 </li><li>
-Check the network connectivity among nodes, nettest agent is provided
+Check the network connectivity among nodes, nettest agent is provided,
+{% highlight PowerShell %}
 mco nettest ping 192.168.2.10
+{% endhighlight %}
 </li><li>
 To monitor processes in node list, process agent is provided
 </li><li>
 To list the java process running in nodes
+{% highlight PowerShell %}
      mco process list java
+{% endhighlight %}     
 This is exactly like running ps command in each node with grep
 </li><li>
 To list all such plugins installed in each node,
+{% highlight PowerShell %}
 mco plugin doc
+{% endhighlight %}
 </li><li>
 To see actions available on those plugins 
+{% highlight PowerShell %}
 mco plugin doc agent/package
+{% endhighlight %}
 </li>
 </ul>
 
@@ -156,9 +164,9 @@ We can now combine this fact with Puppet Classes to pick a subset of your nodes,
 is an AND search,
 
 {% highlight PowerShell %}
-    mco ping -W "roles::node cluster=alfa"
+mco ping -W "roles::node cluster=alfa"
 
-    mco ping -S "(roles::node or roles::middleware) and cluster=alfa"
+mco ping -S "(roles::node or roles::middleware) and cluster=alfa"
 {% endhighlight %}    
 
 To selectively install zip package to all the nodes,
