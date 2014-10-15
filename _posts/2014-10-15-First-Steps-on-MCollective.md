@@ -64,13 +64,17 @@ git clone git://github.com/ripienaar/mcollective-vagrant.git
 Go to the folder and open Vagrantfile. Change the variables accordingly. By default the instance count (the number of instances to be spawned) is mentioned as 5. 
 </li><li>
 Then start the Vagrant instances by,
+{% highlight PowerShell %}
 vagrant up
+{% endhighlight %}
 
 This will take several minutes to get all the instances up and running. This will spawn the no of instances mentioned in above plus the middleware instances.
 </li><li>
 
-Logs in to the middleware instance by 
+Logs in to the middleware instance by
+{% highlight PowerShell %}
 vagrant ssh middleware
+{% endhighlight %}
 </li>
 </ol>
 OK, now we are ready to deal with Mcollective system.
