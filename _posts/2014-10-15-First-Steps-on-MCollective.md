@@ -80,14 +80,22 @@ vagrant ssh middleware
 OK, now we are inside the cluster and ready to deal with Mcollective system.
 A command line client (mco) is used to interact with Mcollective middleware.Sample command interactions are as follows.
 
-<hr3>Examples</hr3>
+<h3>Examples</h3>
 <ul>
 <li>
 To see the nodes connected,
-{% highlight code %}
+{% highlight PowerShell %}
 mco ping
 {% endhighlight %}
-</li></ul>
+</li><li>
+MCollective keeps lot of information about the nodes. We can retrieve them by,
+{% highlight PowerShell %}
+mco inventory middleware.example.net
+{% endhighlight %}
+</li>
+
+
+</ul>
 
 Selective communication with nodes
 
