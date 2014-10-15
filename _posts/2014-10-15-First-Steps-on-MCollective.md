@@ -46,3 +46,33 @@ Also set of Agent plugin plugins are available to perform actual work in the ser
 
 More detailed view of the architecture can be found <a target="_blank" href="https://docs.puppetlabs.com/mcollective/overview_components.html">here</a>.
 
+<h3>Demo</h3>
+
+Mcollective documentation provides a vagrant based demo. It creates a lightweight cluster with Cent-os based vagrant instances. Instances are configured with mcollective (using puppet) and get connected with middleware. In this demo Redis is used as middleware. Using this we can do hands on on  MCollective. Here are the steps to setup the demo.
+
+<ol type="1">
+<li>
+Install VirtualBox. 
+</li><li>
+Download Vagrant from <a target="_blank" href="http://www.vagrantup.com/downloads.html">here</a> based on your current OS and install it. 
+</li><li>
+Go to the <a href="https://github.com/ripienaar/mcollective-vagrant">mcollective-vagrant repository</a> on GitHub. Clone the repo to your host machine
+{% highlight PowerShell %}
+git clone git://github.com/ripienaar/mcollective-vagrant.git
+{% endhighlight %}
+</li><li>
+Go to the folder and open Vagrantfile. Change the variables accordingly. By default the instance count (the number of instances to be spawned) is mentioned as 5. 
+</li><li>
+Then start the Vagrant instances by,
+vagrant up
+
+This will take several minutes to get all the instances up and running. This will spawn the no of instances mentioned in above plus the middleware instances.
+</li><li>
+
+Logs in to the middleware instance by 
+vagrant ssh middleware
+</li>
+</ol>
+OK, now we are ready to deal with Mcollective system.
+
+
