@@ -84,7 +84,7 @@ A command line client (mco) is used to interact with Mcollective middleware.Samp
 <ul>
 <li>
 To see the nodes connected,
-{% highlight ruby %}
+{% highlight code %}
 mco ping
 {% endhighlight %}
 </li></ul>
