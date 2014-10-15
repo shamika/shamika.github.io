@@ -24,6 +24,9 @@ Orchestration - There are situations where you want to perform operations on nod
 Mcollective supported these functionalities open-endedly. Why I say open ended is that it comes with bunch of inbuilt features to do those but not limited to it. We can plug our own functionalities easily.
 
 <h3>Tips on MCollective Architecture</h3>
+
+![MCollective Component Architecture](/images//posts/20141015/mcollective_architecture.jpg)
+
 <ul>
 <li>
 Whole MCollective architecture is consisted with three main components - MCollective Demon, Middleware and the Client. 
