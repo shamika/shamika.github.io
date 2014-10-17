@@ -108,16 +108,19 @@ Now everything is done. Let's test it.
 
 <h3>Test it</h3>
 
-Let us check the doc of the plugins available in each node and see our newlly created plugin is available,
-
+Let us check the doc of the plugins available in each node and see our newlly created plugin is available. SSH to one of the nodes and execute,
+{% highlight ruby %}
 mco plugin doc
+{% endhighlight %}
 
 You will see it added in the "Agents" section.
 ![New agent listing](/images/posts/20141017/custom_agent.png)
 
 To see the documentation of our plugin,
 
+{% highlight ruby %}
 mco plugin doc agent/wso2server
+{% endhighlight %}
 
 You will see the definition of the plugin, actions, parameters which we difined in the DDL.
 
@@ -125,9 +128,11 @@ If it is not listed there, then this might be because of the implementation typo
 
 OK, Now let's just invoke the agent. For that we use rpc plugin.
 
+{% highlight ruby %}
 mco rpc wso2server echo msg="Hello"
+{% endhighlight %}
 
-You will get the result as follows,
+You will see every node is reponded with same "Hello" message and their time as follows,
 ![New agent invocation](/images/posts/20141017/plugin_invocation.png)
 
 
