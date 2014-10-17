@@ -103,7 +103,6 @@ Even Though we copied these files manually across all the nodes, in a real clust
 Restart the Mcollective demons (mcollectived) in the nodes.
 Now everything is done. Let's test it.
 </li>
-</li>
 </ol>
 
 <h3>Test it</h3>
