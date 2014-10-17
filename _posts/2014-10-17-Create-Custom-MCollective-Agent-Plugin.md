@@ -15,6 +15,7 @@ Implementation file - File where the main logic of the plugin is placed <br/><br
 </li><li>
 Data Definition File (DDL) - Meta data and the validation information of the plugin is placed.
 </li>
+</ol>
 
 We are going to implement simple echo plugin and going to deploy it in the Vagrant based demo described in the last post. Here are the steps. 
 
