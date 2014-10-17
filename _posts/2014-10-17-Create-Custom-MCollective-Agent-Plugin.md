@@ -16,7 +16,7 @@ Implementation file - File where the main logic of the plugin is placed <br/><br
 Data Definition File (DDL) - Meta data and the validation information of the plugin is placed.
 </li>
 
-We are going to implement simple echo plugin with the following steps. 
+We are going to implement simple echo plugin and going to deploy it in the Vagrant based demo described in the last post. Here are the steps. 
 
 <h3>Steps</h3>
 
@@ -82,12 +82,22 @@ action "echo", :description => "Perform URL test" do
 end
 
 {% endhighlight %}
-In the meatadata section we define general info about the agent such as :name, :austher, :license etc. One of the important variable that we define here is the “:timeout”. This is the time that Mcollective should wait until any of the actions in this plugin is performed in a node. In other words if no response comes for echo action from a particular node within 60 seconds the mcollective will times out and no longer waiting for a response.
+In the meatadata section we define general info about the agent such as :name, :auther, :license etc. One of the important variable that we define here is the “:timeout”. This is the time that Mcollective should wait until any of the actions in this plugin is performed in a node. In other words if no response comes for echo action from a particular node within 60 seconds the mcollective will times out and no longer waiting for a response.
 
 Then we define the meta data related to the actions. In above we have defined what are the input and output parameters and their validation conditions for echo action.
 
 Now the implementation of the agent is completed. Let us see how can we deploy this.
 <br/><br/></li><li>
+Deploy the agent by copying the two files (wso2server.rb, wso2server.ddl) to mcollective plugins location in each node. In the demo the location is,
+
+/usr/libexec/mcollective/mcollective/agent
+
+According to the Mcollective documentation the location differs as follows
+
+Red Hat-like OSes - /usr/libexec/mcollective
+Debian-like OSes - /usr/share/mcollective/plugins
+
+Even Though we copied these files manually across all the nodes, in a real cluster this is not practical. So we should generally use Puppet or other configuration management to copy the files.
 
 </li>
 </ol>
