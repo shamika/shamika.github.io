@@ -99,5 +99,13 @@ Debian-like OSes - /usr/share/mcollective/plugins
 
 Even Though we copied these files manually across all the nodes, in a real cluster this is not practical. So we should generally use Puppet or other configuration management to copy the files.
 
+<br/><br/></li><li>
+Restart the Mcollective demons (mcollectived) in the nodes.
+Now everything is done. Let's test it.
+</li>
 </li>
 </ol>
+
+<h3>Test it</h3>
+
+
