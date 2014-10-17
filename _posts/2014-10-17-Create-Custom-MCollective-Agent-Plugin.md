@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create Custom Agent Plugin - MColelctive
+title: Create Custom Agent Plugin - MCollelctive
 tags: mcollective, agent
 ---
 In this post I will walk through steps of implement custom agent plugin MCollective. If you need an basic understanding of what MCollective and what it does please refer my previous post.
@@ -22,7 +22,7 @@ We are going to implement simple echo plugin with the following steps.
 
 <ol>
 <li>
-Create a ruby file indicating your agent plugin’s name - I name it as wso2server.rb ; So my agent’s name would be wso2server.
+Create a ruby file indicating your agent plugin’s name - I name it as wso2server.rb; So my agent’s name would be wso2server.
 <br/><br/></li><li>
 Add the follwoing code to the wso2server.rb file, which consis the logic to echo the message.
 
@@ -82,6 +82,12 @@ action "echo", :description => "Perform URL test" do
 end
 
 {% endhighlight %}
+In the meatadata section we define general info about the agent such as :name, :austher, :license etc. One of the important variable that we define here is the “:timeout”. This is the time that Mcollective should wait until any of the actions in this plugin is performed in a node. In other words if no response comes for echo action from a particular node within 60 seconds the mcollective will times out and no longer waiting for a response.
+
+Then we define the meta data related to the actions. In above we have defined what are the input and output parameters and their validation conditions for echo action.
+
+Now the implementation of the agent is completed. Let us see how can we deploy this.
+<br/><br/></li><li>
 
 </li>
 </ol>
