@@ -92,10 +92,10 @@ Deploy the agent by copying the two files (wso2server.rb, wso2server.ddl) to mco
 
 /usr/libexec/mcollective/mcollective/agent
 
-According to the Mcollective documentation the location differs as follows <br />
+According to the Mcollective documentation the location differs as follows, <br /><br/>
 
 Red Hat-like OSes - /usr/libexec/mcollective <br />
-Debian-like OSes - /usr/share/mcollective/plugins <br />
+Debian-like OSes - /usr/share/mcollective/plugins <br /><br/>
 
 Even Though we copied these files manually across all the nodes, in a real cluster this is not practical. So we should generally use Puppet or other configuration management to copy the files.
 
@@ -108,15 +108,27 @@ Now everything is done. Let's test it.
 
 <h3>Test it</h3>
 
-<li>
 Let us check the doc of the plugins available in each node and see our newlly created plugin is available,
 
 mco plugin doc
 
 You will see it added in the "Agents" section.
-![MCollective Component Architecture](/images//posts/20141017/custom_agent.png)
+![New agent listing](/images/posts/20141017/custom_agent.png)
+
+To see the documentation of our plugin,
+
+mco plugin doc agent/wso2server
+
+You will see the definition of the plugin, actions, parameters which we difined in the DDL.
+
+If it is not listed there, then this might be because of the implementation typo.You can further debug the reason by looking at the mcollective log located at /var/log/mcollective.log.
+
+OK, Now let's just invoke the agent. For that we use rpc plugin.
+
+mco rpc wso2server echo msg="Hello"
+
+You will get the result as follows,
+![New agent invocation](/images/posts/20141017/plugin_invocation.png)
 
 
 
-
-</li>
