@@ -92,10 +92,10 @@ Deploy the agent by copying the two files (wso2server.rb, wso2server.ddl) to mco
 
 /usr/libexec/mcollective/mcollective/agent
 
-According to the Mcollective documentation the location differs as follows
+According to the Mcollective documentation the location differs as follows <br />
 
-Red Hat-like OSes - /usr/libexec/mcollective
-Debian-like OSes - /usr/share/mcollective/plugins
+Red Hat-like OSes - /usr/libexec/mcollective <br />
+Debian-like OSes - /usr/share/mcollective/plugins <br />
 
 Even Though we copied these files manually across all the nodes, in a real cluster this is not practical. So we should generally use Puppet or other configuration management to copy the files.
 
@@ -108,4 +108,15 @@ Now everything is done. Let's test it.
 
 <h3>Test it</h3>
 
+<li>
+Let us check the doc of the plugins available in each node and see our newlly created plugin is available,
 
+mco plugin doc
+
+You will see it added in the "Agents" section.
+![MCollective Component Architecture](/images//posts/20141017/custom_agent.png)
+
+
+
+
+</li>
