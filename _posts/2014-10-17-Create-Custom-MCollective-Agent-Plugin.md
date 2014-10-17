@@ -131,8 +131,9 @@ OK, Now let's just invoke the agent. For that we use rpc plugin.
 {% highlight ruby %}
 mco rpc wso2server echo msg="Hello"
 {% endhighlight %}
+Please noe that "wso2server" is the agent name and "echo" is the action and "msg" is the parameter required for the action.
 
-You will see every node is reponded with same "Hello" message and their time as follows,
+As a response you will see that every node is reponded with same "Hello" message and their time as follows,
 ![New agent invocation](/images/posts/20141017/plugin_invocation.png)
 
 
