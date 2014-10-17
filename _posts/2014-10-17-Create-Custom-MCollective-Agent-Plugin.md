@@ -11,7 +11,7 @@ Typically Mcollective plugins are written in ruby. A plugin should contain two f
 
 <ol>
 <li>
-Implementation file - File where the main logic of the plugin is placed <br/>
+Implementation file - File where the main logic of the plugin is placed <br/><br/>
 </li><li>
 Data Definition File (DDL) - Meta data and the validation information of the plugin is placed.
 </li>
@@ -23,7 +23,7 @@ We are going to implement simple echo plugin with the following steps.
 <ol>
 <li>
 Create a ruby file indicating your agent plugin’s name - I name it as wso2server.rb ; So my agent’s name would be wso2server.
-<br/></li><li>
+<br/><br/></li><li>
 Add the follwoing code to the wso2server.rb file, which consis the logic to echo the message.
 
 {% highlight ruby %}
@@ -45,7 +45,7 @@ Add the follwoing code to the wso2server.rb file, which consis the logic to echo
 
 As you see the agent plugin should be a sub class of RPC::Agent. It has ac action called "echo" which expects a parameter called :msg. Next line it validates the parameter :msg whether is string or not. These agent actions are stuffed with request and reply variables. In the logic the requests :msg is copied to reply's :msg, so does echo. Aditionally sets the :time value in reply message.
 
-<br/></li>
+<br/><br/></li>
 <li>
 Create meta data file corresponding to wso2server agent. It should be same as agent name with .ddl extention.Create wso2server.ddl and add the following,
 
@@ -59,6 +59,28 @@ metadata        :name        => "wso2",
                 :timeout     => 60
 
 requires :mcollective => "2.2.1"
+
+action "echo", :description => "Perform URL test" do
+    display :always
+
+     input :msg,
+          :prompt      => "Message",
+          :description => "Message to echo",
+          :type        => :string,
+          :validation  => '^[a-zA-Z\-_\d]+$',
+          :optional    => false,
+          :maxlength   => 120
+
+     output :msg,
+          :description => "Mesage recieved",
+          :display_as  => "Message"
+
+     output :time,
+          :description => "Time that the message was recieved",
+          :display_as  => "Time"
+
+end
+
 {% endhighlight %}
 
 </li>
