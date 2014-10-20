@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create Custom Agent Plugin - MCollelctive
+title: Create Custom Agent Plugin - MCollective
 tags: mcollective, agent
 ---
 In this post I will walk through the steps of implementing a custom agent plugin in MCollective. If you need an basic understanding of what MCollective is and what it does, please refer my previous <a href="http://shamika.github.io/First-Steps-on-MCollective/">post</a>.
