@@ -1,12 +1,12 @@
 ---
 layout: post
-title: wso2server - A Custom MCollectoive Agent Plugin 
+title: wso2server - A MCollective Agent Plugin for WSO2
 tags: mcollective, agent, wso2
 ---
 
-"wso2server" is a custom mcollective agent plugin to perform manupulations related to wso2 instances. The plugin can be found <a href="https://github.com/shamika/wso2-mcollective-plugin">here</a>.
+"wso2server" is a custom mcollective agent plugin to perform manupulations related to wso2 instances. The plugin can be found <a href="https://github.com/shamika/wso2-mcollective-plugin" target="_blank">here</a>.
 
-Please refer previous posts to learn about <a href="http://shamika.github.io/First-Steps-on-MCollective/">what mcollective is</a> and <a href="http://shamika.github.io/Create-Custom-MCollective-Agent-Plugin/">how we can write a custom plugin</a>.
+Please refer previous posts to learn about <a href="http://shamika.github.io/First-Steps-on-MCollective/" target="_blank">what mcollective is</a> and <a href="http://shamika.github.io/Create-Custom-MCollective-Agent-Plugin/" target="_blank">how we can write a custom plugin</a>.
 
 <h3>Plugin overview</h3>
 
@@ -24,7 +24,7 @@ The main difference between actions 1,2 and 3,4 is the cluster name should be pa
 
 Basic configuration needed for the "wso2server" is the location where the wso2 instance is placed. This should be configured by adding following line to mcollective main configuration file(server.cfg)
 
-{% highlight %}
+{% highlight powershell %}
   plugin.wso2server.location = /opt/wso2/ #wso2 instance location
 {% endhighlight %}
 
