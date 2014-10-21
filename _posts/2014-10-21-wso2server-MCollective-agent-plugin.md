@@ -34,11 +34,52 @@ If you are using Vagrant based demo add the above line to the file
   
 <h3>Deployemnt</h3> 
 
+Deploy the agent by copying the two files (wso2server.rb, wso2server.ddl) to mcollective agent plugins' location in each node which the wso2 instances are running. In the Vagrant based demo the location is, 
 
+/usr/libexec/mcollective/mcollective/agent 
+
+According to the Mcollective documentation this location differs as follows based on the OS, 
+
+Red Hat-like OSes - /usr/libexec/mcollective 
+Debian-like OSes - /usr/share/mcollective/plugins 
+
+Even Though we copied these files manually across all the nodes, in a real cluster this is not practical. So we should generally use "Puppet" or other configuration management to copy the files.
+
+Finally restart the Mcollective demons (mcollectived) in the nodes.
 
 <h3>Demo</h3>
 
-After adding that respin/reload the 
+<ul><li>
+To test the plugin,
+
+mco rpc wso2server echo msg="Hello"
+
+Will send the Hello message from each node.
+<li></li>
+To see teh plugin documentation,
+
+mco plugin doc agent/wso2server
+<li></li>
+To stop all the wso2 server instances,
+
+mco rpc wso2server stop_all
+<li></li>
+To start all the wso2 server instances,
+
+mco rpc wso2server start_all
+<li></li>
+To stop all the nodes in app server cluser.
+
+mco rpc wso2server stop cluster="appserver"
+
+The wso2 server insances belonged to appserver cluster will be stopped while others will reposnd as "Not Interested".
+
+Please node that with the current imeplentation the above node filtering is being done based on the hostname. In otherwords the nodes having "appserver" as pasrt of their hostname (eg:- 23451232.appserver.example.com) will be identified as a node in appserver cluster. In fact this is typical scenario in puppet based deployments.
+</li></li>
+To start all the nodes in app server cluser.
+
+mco rpc wso2server start cluster="appserver"
+</li></ul>
 
 
 
