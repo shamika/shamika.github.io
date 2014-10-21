@@ -52,33 +52,39 @@ Finally restart the Mcollective demons (mcollectived) in the nodes.
 <ul><li>
 To test the plugin,
 
+{% highlight powershell %}
 mco rpc wso2server echo msg="Hello"
-
+{% endhighlight %}
 Will send the Hello message from each node.
 <li></li>
 To see teh plugin documentation,
-
+{% highlight powershell %}
 mco plugin doc agent/wso2server
+{% endhighlight %}
 <li></li>
 To stop all the wso2 server instances,
-
+{% highlight powershell %}
 mco rpc wso2server stop_all
+{% endhighlight %}
 <li></li>
 To start all the wso2 server instances,
-
+{% highlight powershell %}
 mco rpc wso2server start_all
+{% endhighlight %}
 <li></li>
 To stop all the nodes in app server cluser.
-
+{% highlight powershell %}
 mco rpc wso2server stop cluster="appserver"
+{% endhighlight %}
 
 The wso2 server insances belonged to appserver cluster will be stopped while others will reposnd as "Not Interested".
 
 Please node that with the current imeplentation the above node filtering is being done based on the hostname. In otherwords the nodes having "appserver" as pasrt of their hostname (eg:- 23451232.appserver.example.com) will be identified as a node in appserver cluster. In fact this is typical scenario in puppet based deployments.
 </li></li>
 To start all the nodes in app server cluser.
-
+{% highlight powershell %}
 mco rpc wso2server start cluster="appserver"
+{% endhighlight %}
 </li></ul>
 
 
