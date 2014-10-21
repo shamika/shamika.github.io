@@ -18,7 +18,7 @@ Basically this initial version wso2server agent consists of follwoing actions.
 3. start - Start the wso2 instance based on the instance/cluster type. eg:- appserver
 4. stop - Stop the wso2 instance based on the instance/cluster type. eg:- appserver
 
-The main difference between actions 1,2 and 3,4 is the cluster name should be passed as a argument to the latter actions and they only respond if the particular node is belonged to given cluster name.
+The main difference between actions 2,3 and 4,5 is the cluster name should be passed as an argument to the latter actions and they only respond if the particular node is belonged to given cluster name.
 
 <h3>Configuration</h3>
 
