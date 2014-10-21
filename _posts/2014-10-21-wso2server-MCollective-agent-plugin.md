@@ -77,9 +77,9 @@ To stop all the nodes in app server cluser.
 mco rpc wso2server stop cluster="appserver"
 {% endhighlight %}
 
-The wso2 server insances belonged to appserver cluster will be stopped while others will reposnd as "Not Interested".
+The wso2 server insances belonged to appserver cluster will be stopped while others will reposnd as "Not Interested".<br/><br/>
 
-Please node that with the current imeplentation the above node filtering is being done based on the hostname. In otherwords the nodes having "appserver" as pasrt of their hostname (eg:- 23451232.appserver.example.com) will be identified as a node in appserver cluster. In fact this is typical scenario in puppet based deployments.
+Please note that with the current imeplentation, above node filtering is being done based on the hostname. In otherwords the nodes having "appserver" as pasrt of their hostname (eg:- 23451232.appserver.example.com) will be identified as a node in appserver cluster. In fact this is typical scenario in puppet based deployments.
 </li></li>
 To start all the nodes in app server cluser.
 {% highlight powershell %}
