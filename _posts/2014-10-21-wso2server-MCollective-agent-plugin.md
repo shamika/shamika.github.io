@@ -1,6 +1,6 @@
 ---
 layout: post
-title: wso2server - A MCollective Agent Plugin for WSO2
+title: wso2server - MCollective Agent Plugin for WSO2
 tags: mcollective, agent, wso2
 ---
 
