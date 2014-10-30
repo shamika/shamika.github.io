@@ -5,20 +5,8 @@ title: Archive
 
 ## Blog Posts
 
-<ul>
-  {% for post in site.posts %}
-
-    {% unless post.next %}
-      <h3>{{ post.date | date: '%Y' }}</h3>
-    {% else %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% if year != nyear %}
-        <h3>{{ post.date | date: '%Y' }}</h3>
-      {% endif %}
-    {% endunless %}
-
-    <li>{{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})</li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
+{% endfor %}
 
