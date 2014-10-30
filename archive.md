@@ -4,7 +4,7 @@ title: Archive
 ---
 
 
-
+<table>
 {% for post in site.posts %}
   {% unless post.next %}
     <tr><th>{{ post.date | date: '%Y' }}</th><th>&nbsp;</th></tr>
@@ -16,3 +16,4 @@ title: Archive
     {% endif %}
   {% endunless %}
 {% endfor %}
+</table>
