@@ -6,9 +6,13 @@ title: Archive
 ## Blog Posts
 
 {% for post in site.posts %}
-{% year = post.date | date: '%Y'}
-{{"hi" + year}}
-{%=year}
-   * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
+  {% unless post.next %}
+    <tr><th>{{ post.date | date: '%Y' }}</th><th>&nbsp;</th></tr>
+  {% else %}
+    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+    {% if year != nyear %}
+      <tr><th>{{ post.date | date: '%Y' }}</th><th>&nbsp;</th></tr>
+    {% endif %}
+  {% endunless %}
 {% endfor %}
-
