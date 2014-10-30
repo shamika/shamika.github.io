@@ -7,7 +7,8 @@ title: Archive
 
 {% for post in site.posts %}
 {% year = post.date | date: '%Y'}
-{{year}}
+{{"hi" + year}}
+{%=year}
    * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
 {% endfor %}
 
