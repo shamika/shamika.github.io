@@ -15,7 +15,7 @@ title: Archive
         <h3>{{ post.date | date: '%Y' }}</h3>
       {% endif %}
     {% endunless %}
-    * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
+    <li>{{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a></li>
     
   {% endfor %}
 </ul>
