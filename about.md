@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself. 
+I am a Senior Software Engineer at WSO2 with over 6 years experience working for designing and developing enterprise applications and middleware systems. In my current role I am focusing on building enterprise integration layers based on WSO2 products. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+Email - amilaaina@gmail.com
+Twitter - https://twitter.com/Amila_Shamika
+Linkedin - http://lk.linkedin.com/pub/shamika-ariyawansa/10/335/a73
