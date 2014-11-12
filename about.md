@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About 
 permalink: /about/
 ---
 
@@ -8,6 +8,6 @@ I am a Senior Software Engineer at WSO2 with over 6 years experience working for
 
 ### Contact me
 
-Email - amilaaina@gmail.com
-Twitter - https://twitter.com/Amila_Shamika
+Email - amilaaina@gmail.com <br/>
+Twitter - https://twitter.com/Amila_Shamika <br/>
 Linkedin - http://lk.linkedin.com/pub/shamika-ariyawansa/10/335/a73
