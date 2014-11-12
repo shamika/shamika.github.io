@@ -4,3 +4,44 @@ title: What's new in JAVA 8 & Why they are?
 tags: java 8
 ---
 
+At the end of the year 2004, JAVA 5 was released with major language improvements. Annotations, Autoboxing/Unboxing, Varargs, Static Import and most importantly the GENERICS are some of those which brought a look and enthusiasm to JAVA world. Even Though JAVA 6 & 7 was released after that, as far as the language features are concerned they did not do much novelty except the performance. Ten years later JAVA 8 was released on last March adding another bundles of timely required features. 
+In this post I will discuss the features introduced with JAVA 8, but most important fact is WHY they have been introduced. Let us discuss. The list is prioritised based on my favoritism :). 
+
+1. Extension Methods 
+
+Why :- 
+
+How :- 
+
+Example :- 
+
+But :( :- Multiple Inhetitance 
+
+2. Lamda Expressions
+
+Why :- 
+
+How :- 
+
+Example :-
+
+3. Annotations on Parameters
+
+Why:-
+
+How:-
+
+Example :-
+
+4. Bolerplate code removal of Genrics
+Why :-
+
+How :-
+
+Example :-
+
+5. 
+
+
+Eclipse support with Luna http://eclipsesource.com/blogs/2014/03/25/eclipse-support-for-java-8/
+	 
