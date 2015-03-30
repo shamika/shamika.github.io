@@ -121,6 +121,9 @@ Obtain the signinginput by merging the first two parts of the JWT token by perio
 Take this as the signing input and verify the signature (3rd part of the JWT token) using the public key of the idp.com provided.
 
 Sample JAVA code of signature validation is as follows,
+
+{% highlight java %}
+
 package org.shamika.samples;
 
 import java.io.File;
@@ -198,7 +201,7 @@ public class Verifyier {
 	}
 }
 
-
+{% endhighlight %}
  
 <h2>2. Resource Owner Password Credentials </h2>
 
