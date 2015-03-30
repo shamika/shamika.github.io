@@ -6,7 +6,7 @@ tags: identity, OAuth, API, Security
 ---
 This post briefly explains what messages being passed as requests and responses when interacting with different OAuth grant types.The main intention of this post is not to give in depth knowledge about what is going beneath the OAuth grant types theoretically but to provide a reference on message formats requires for the interaction.
 
-<h1>1. Authorization Code</h1>
+<h2>1. Authorization Code</h2>
 An agent (eg:- browser) should be present for this grant type because it is based on redirections and obtaining access token consists of two steps in this grant type. Here is the flow,
 
 Get the Authorization Code
@@ -200,7 +200,7 @@ public class Verifyier {
 
 
  
-<h1>2. Resource Owner Password Credentials </h1>
+<h2>2. Resource Owner Password Credentials </h2>
 
 Make a POST request to the TOKEN endpoint with following params. 
 
@@ -232,7 +232,7 @@ refresh_token: "b258f8961d3bf9c41b77ca328e3beace"
 access_token: "cfd521fd5df77c43e3ab283d4bea2"
 }
 
-<h1>3. Implicit</h1>
+<h2>3. Implicit</h2>
 
 An agent (eg:- browser) should be present for this grant type because it is based on redirections.
 
@@ -254,7 +254,7 @@ User will be redirected to a login page and upon successfully login, then redire
 http://localhost:8080/playground/oauth2client#access_token=717ba28b29ebb484c4726762d360f00&expires_in=45833
 
 
-<h1>4. Client Credentials</h1>
+<h2>4. Client Credentials</h2>
 
 Here the client itself assumed to be the resource owner, Uses for server to server communication.
 
@@ -284,7 +284,7 @@ expires_in: 47928
 access_token: "cfd521fd5df77c43e3ab283d4bea2"
 }
 
-<h1>5. SAML2 Bearer Token</h1>
+<h2>5. SAML2 Bearer Token</h2>
 
 After successfully,  authenticated using SAML, the application would be able to get the access token by passing the SAML assertion to TOKEN endpoint.
 
